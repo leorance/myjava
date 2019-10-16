@@ -1,0 +1,60 @@
+Jangan lupa firacode
+
+// Insert sqli
+---------------------------------------------------------------
+// jika auto increment isi "null"
+try{
+    conn = DriverManager.getConnection(Url, User, Pass);
+    st = conn.createStatement();
+    String sql = "INSERT INTO nama_table VALUES (null, '" + nama_var + "', '" + nama_var1+"');";
+    st.executeUpdate(sql);
+}
+catch(Exception x){
+    x.PrintStackTrace();
+}
+
+
+// Update sqlu
+
+----------------------------------------------------------------- 
+// jangan tulis ID setelah SET
+try{
+    conn = DriverManager.getConnection(Url, User, Pass);
+    st = conn.createStatement();
+    String sql = "UPDATE nama_table SET yang_mau_di_update = '" + nama_var + "' WHERE id ='" + nama_var + "'";
+    st.executeUpdate(sql);
+}
+catch(Exception x){
+    x.PrintStackTrace();
+}
+
+// Delete sqld
+
+-------------------------------------------------------------------
+try{
+    conn = DriverManager.getConnection(Url, User, Pass);
+    st = conn.createStatement();
+    String sql = "DELETE FROM nama_table WHERE nama_var = '" + nama_var + "'";
+    st.executeUpdate(sql);
+    }
+catch(Exception x){
+    x.PrintStackTrace();
+    }
+
+// Select sqls
+
+--------------------------------------------------------------------
+// menampilkan semua data dengan while
+try{
+    conn = DriverManager.getConnection(Url, User, Pass);
+    st = conn.createStatement();
+    String sql = "SELECT * FROM isi";
+    rs = st.executeQuery(sql);
+        while (rs.next()){
+            ${cursor}
+        }
+    }
+catch(Exception x){
+    x.PrintStackTrace();
+}
+
